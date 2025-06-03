@@ -16,15 +16,15 @@ function App(){
   return(<>
   <BrowserRouter>
     <Routes>
-       <Route path='login' element={<Login/>}/>
+       <Route path='/login' element={<Login/>}/>
        <Route path='*' element={<Login/>}/>
-       <Route path='welcome' element={<Welcome/>}/>
-       <Route path='MFD' element={<MFD/>}/>
-       <Route path='chatpage' element={<ChatPage/>}/>
-       <Route path='corporateportfolio' element={<CorporatePortFolio/>}/>
-       <Route path='dematportfolio' element={<DematPortfolio/>}/>
-       <Route path='forgotpassword' element={<ForgotPassword/>}/>
-       <Route path='createpassword' element={<ResetPassword/>}/>
+       <Route path='/welcome' element={<Welcome/>}/>
+       <Route path='/mfd' element={<MFD/>}/>
+       <Route path='/chatpage' element={<ChatPage/>}/>
+       <Route path='/corporateportfolio' element={<CorporatePortFolio/>}/>
+       <Route path='/dematportfolio' element={<DematPortfolio/>}/>
+       <Route path='/forgotpassword' element={<ForgotPassword/>}/>
+       <Route path='/createpassword' element={<ResetPassword/>}/>
     </Routes>
     
     </BrowserRouter>
