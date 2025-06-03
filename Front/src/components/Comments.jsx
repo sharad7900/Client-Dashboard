@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Input, Button, VStack, HStack, Text, Flex, Spinner } from '@chakra-ui/react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const ChatPage =  () => {
@@ -9,7 +9,7 @@ const ChatPage =  () => {
   const [response,setResponse] = useState();
   useEffect(()=>{
    const fetching = async() =>{
-    const temp = await fetch(`http://localhost:5000/comments`,{
+    const temp = await fetch(`https://client-dashboard-ruby.vercel.app/comments`,{
         method:"POST",
         credentials: 'include',
         headers:{

@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 const Demo = () => {
   const navigate = useNavigate();
   const logout = async ()=>{
-    const response = await fetch(`http://localhost:5000/logout`,{
+    const response = await fetch(`https://client-dashboard-ruby.vercel.app/logout`,{
       method:"POST",
       credentials: 'include',
       headers:{

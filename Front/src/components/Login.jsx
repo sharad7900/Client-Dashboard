@@ -24,7 +24,7 @@ const Login = () => {
         setLoading(false);
         return;
       }
-      const response = await fetch(`http://localhost:5000/login`,{
+      const response = await fetch(`https://client-dashboard-ruby.vercel.app/login`,{
         method:"POST",
         credentials: 'include',
         headers:{

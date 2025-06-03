@@ -86,7 +86,7 @@ const ResetPassword = () => {
 
 const PasswordReset = async (pass,confpass,token) =>{
 
-  const response = await fetch(`http://localhost:5000/resetpassword`,{
+  const response = await fetch(`https://client-dashboard-ruby.vercel.app/resetpassword`,{
         method:"POST",
         credentials: 'include',
         headers:{

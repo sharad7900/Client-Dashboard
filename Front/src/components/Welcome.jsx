@@ -5,7 +5,7 @@ import "./Welcome.css"
 const Welcome = ()=>{
     useEffect(()=>{
         const data = async()=>{
-        const response = await fetch(`http://localhost:5000/corporate_portFolio`,{
+        const response = await fetch(`https://client-dashboard-ruby.vercel.app/corporate_portFolio`,{
             method:"GET",
             credentials: 'include',
             headers:{

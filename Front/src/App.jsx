@@ -24,7 +24,7 @@ function App(){
        <Route path='corporateportfolio' element={<CorporatePortFolio/>}/>
        <Route path='dematportfolio' element={<DematPortfolio/>}/>
        <Route path='forgotpassword' element={<ForgotPassword/>}/>
-       <Route path='/createpassword' element={<ResetPassword/>}/>
+       <Route path='createpassword' element={<ResetPassword/>}/>
     </Routes>
     
     </BrowserRouter>
