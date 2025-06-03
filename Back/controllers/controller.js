@@ -6,17 +6,17 @@ const DB_ID = process.env.DB_ID;
 const jwt = require("jsonwebtoken");
 
 const home = async (req, res) => {
-  // const cookie = req.cookies.token;
-  // if (!cookie) {
-  //   return res.status(400).json({ message: "Session Expired" });
-  // }
-  // try{
-    // const data = jwt.verify(cookie, process.env.SECRET);
+  const cookie = req.cookies.token;
+  if (!cookie) {
+    return res.status(400).json({ message: "Session Expired" });
+  }
+  try{
+    const data = jwt.verify(cookie, process.env.SECRET);
     res.status(200).send("Hello");
-  // }
-  // catch(error){
-  //   res.status(400).send("Session Expired");
-  // }
+  }
+  catch(error){
+    res.status(400).send("Session Expired");
+  }
   
 }
 
