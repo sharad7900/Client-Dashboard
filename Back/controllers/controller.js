@@ -54,6 +54,8 @@ const login = async (req, res) => {
       const cookieOptions = {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
+        secure: true,         // MUST be true on Vercel (HTTPS only)
+  sameSite: 'None'      // Cross-origin cookie support
       }
       res.cookie("token", tok, cookieOptions);
       res.status(200).json({ message: "Successfully Login", token: tok });
@@ -282,7 +284,9 @@ const reset_password = async (req,res)=>{
 const logout = async (req, res) => {
   const cookieOptions = {
     httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000
+    maxAge: 24 * 60 * 60 * 1000,
+    secure: true,         // MUST be true on Vercel (HTTPS only)
+  sameSite: 'None'      // Cross-origin cookie support
   }
   res.cookie("token", "", cookieOptions);
   res.clearCookie("token", cookieOptions);
