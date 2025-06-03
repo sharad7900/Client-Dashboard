@@ -1,0 +1,19 @@
+.btn{
+    width: fit-content;
+}
+
+.logout{
+    margin: 5%;
+    font-size: larger;
+}
+
+.fbtn{
+    margin: 5%;
+    padding: 1%;
+}
+
+.rbtn{
+    margin: 5%;
+    margin-top: 85px;
+    padding: 1%;
+}

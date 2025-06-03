@@ -1,0 +1,88 @@
+import { useEffect, useState } from "react";
+import Demo from "./Sider";
+import "./MFD.css" 
+import { Badge, Button, Spinner, Table } from "@chakra-ui/react";
+import { RiArrowRightLine} from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
+import AddTask from "./AddTask";
+
+
+function DematPortfolio(){
+   const [val,setVal] = useState();
+   useEffect(()=>{
+    const data = async()=>{
+        const response = await fetch(`http://localhost:5000/demat_portFolio`,{
+            method:"GET",
+            credentials: 'include',
+            headers:{
+                "Content-Type":"application/json",
+            },
+    
+            
+        })
+        if(!response.ok){
+              window.location.href = '/login'
+              return;
+            }
+        const res = await response.json();
+        setVal(res);
+           
+       }
+      data();
+
+   },[])
+   
+    const navigate = useNavigate();
+   
+   const handleClick = (ids)=>{
+   navigate('/chatpage', {
+      state: { id: ids }
+    });
+
+   }
+
+    return(<>
+    <div className="menu"><Demo/></div>
+{val ? <div className="tableData">
+
+<Table.Root size="sm">
+  <Table.Header>
+    <Table.Row>
+      <Table.ColumnHeader className="header">Name</Table.ColumnHeader>
+      <Table.ColumnHeader className="header">Status</Table.ColumnHeader>
+      <Table.ColumnHeader className="header">Due</Table.ColumnHeader>
+      <Table.ColumnHeader className="header">Frequency</Table.ColumnHeader>
+      <Table.ColumnHeader className="header">Days Left</Table.ColumnHeader>
+      <Table.ColumnHeader className="header">Comments</Table.ColumnHeader>
+    </Table.Row>
+  </Table.Header>
+  <Table.Body>
+    {val.map((item,index) => (
+      <Table.Row key={index}>
+        <Table.Cell className="rows">{item["Task Name"]}</Table.Cell>
+        <Table.Cell className="rows">{item.Status==="Done" ? <Badge colorPalette="green" className="status">Done</Badge> : item.Status==="In progress" ? <Badge colorPalette="blue" className="status">In progress</Badge> : <Badge colorPalette="gray" className="status">Not Started</Badge>}</Table.Cell>
+        <Table.Cell className="rows">{item.Due.slice(0,10)}</Table.Cell>
+        <Table.Cell className="rows">{item.Frequency}</Table.Cell>
+        <Table.Cell className="rows">{item.Days_Left}</Table.Cell>
+        <Table.Cell className="rows"><Button colorPalette="teal" variant="outline" className="cmtbtn" onClick={()=>handleClick(item.id)}>
+        Comments <RiArrowRightLine />
+      </Button></Table.Cell>
+      </Table.Row>
+    ))}
+  </Table.Body>
+</Table.Root>
+<br />
+<br />
+
+<AddTask DB_ID = {"DP"}/>
+
+
+
+</div> : <div  className="loading"><Spinner size="xl"/></div>}
+   
+    </>)
+
+}
+
+export default DematPortfolio;
+

@@ -1,0 +1,15 @@
+.sider{
+    width: 10px;
+}
+
+.welcmoutr{
+    background-image: url("../unnamed.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menubtn > button{
+    background-color: rgb(17,17,17);
+}
+
