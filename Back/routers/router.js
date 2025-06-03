@@ -3,7 +3,7 @@ const control = require("../controllers/controller.js");
 const control2 = require("../controllers/controller2.js");
 const router = express.Router();
 
-router.route("/home").get(control.home);
+router.route("/").get(control.home);
 router.route("/login").post(control.login);
 router.route("/mfd").get(control.mfd);
 router.route("/comments").post(control.comments);
