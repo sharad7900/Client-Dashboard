@@ -40,8 +40,6 @@ const Login = () => {
     }
     else{
       toast.success(res.message);
-
-      
       navigate('/welcome');
     }
     };
