@@ -5,7 +5,7 @@ import "./Welcome.css"
 const Welcome = ()=>{
     useEffect(()=>{
         const data = async()=>{
-        const response = await fetch(`https://client-dashboard-ruby.vercel.app/home`,{
+        const response = await fetch(`https://client-dashboard-ruby.vercel.app/`,{
             method:"GET",
             credentials: 'include',
             headers:{
