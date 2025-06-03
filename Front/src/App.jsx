@@ -16,7 +16,6 @@ function App(){
   return(<>
   <BrowserRouter>
     <Routes>
-       <Route path='/login' element={<Login/>}/>
        <Route path='*' element={<Login/>}/>
        <Route path='/welcome' element={<Welcome/>}/>
        <Route path='/mfd' element={<MFD/>}/>
