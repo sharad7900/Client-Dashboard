@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 const corsOption ={
-    origin:"https://client-dashboard-suigeneris.vercel.app",
+    origin:"https://client-dashboard-six-rho.vercel.app/",
     methods: "GET, PUT, PATCH, DELETE, POST, HEAD",
     credentials:true,
     allowedHeaders: ["Content-Type", "Authorization"]
