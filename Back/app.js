@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 const corsOption ={
-    origin:"https://client-dashboard-suigenerisconsulting.netlify.app/",
+    origin:"https://client-dashboard-suigenerisconsulting.netlify.app",
     methods: "GET, PUT, PATCH, DELETE, POST, HEAD",
     credentials:true,
     allowedHeaders: ["Content-Type", "Authorization"]
@@ -16,6 +16,7 @@ const corsOption ={
 app.use(cookieParser());
 app.use(cors(corsOption));
 app.use("/",router);
+
 
 
 
