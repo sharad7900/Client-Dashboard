@@ -10,7 +10,8 @@ app.use(express.json());
 const corsOption ={
     origin:"https://client-dashboard-suigeneris.vercel.app",
     methods: "GET, PUT, PATCH, DELETE, POST, HEAD",
-    credentials:true
+    credentials:true,
+    allowedHeaders: ["Content-Type", "Authorization"]
 }
 app.use(cookieParser());
 app.use(cors(corsOption));
