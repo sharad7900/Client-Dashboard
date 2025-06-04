@@ -5,14 +5,13 @@ import "./Welcome.css"
 const Welcome = ()=>{
     useEffect(()=>{
         const data = async()=>{
-        const response = await fetch(`https://client-dashboard-ruby.vercel.app/`,{
+        const response = await fetch(`https://client-dashboard-six-rho.vercel.app/`,{
             method:"GET",
             credentials: 'include',
             headers:{
                 "Content-Type":"application/json",
             },
         })
-            console.log(response, "Heelo");
         if(!response.ok){
               window.location.href = '/login'
               return;
