@@ -11,7 +11,7 @@ function MFD(){
    const [val,setVal] = useState();
    useEffect(()=>{
     const data = async()=>{
-        const response = await fetch(`https://client-dashboard-ruby.vercel.app/mfd`,{
+        const response = await fetch(`https://client-dashboard-six-rho.vercel.app/mfd`,{
             method:"GET",
             credentials: 'include',
             headers:{
