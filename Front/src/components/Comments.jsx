@@ -33,7 +33,7 @@ const ChatPage =  () => {
   const sendMessage = async () => {
     if (input.trim().length === 0) return;
     if(input.length!==0){
-    const response2 = fetch(`http://localhost:5000/create_comment`,{
+    const response2 = fetch(`https://client-dashboard-six-rho.vercel.app/create_comment`,{
         method:"POST",
         credentials: 'include',
         headers:{
