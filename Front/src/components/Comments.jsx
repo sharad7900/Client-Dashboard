@@ -9,7 +9,7 @@ const ChatPage =  () => {
   const [response,setResponse] = useState();
   useEffect(()=>{
    const fetching = async() =>{
-    const temp = await fetch(`https://client-dashboard-ruby.vercel.app/comments`,{
+    const temp = await fetch(`https://client-dashboard-six-rho.vercel.app/comments`,{
         method:"POST",
         credentials: 'include',
         headers:{
