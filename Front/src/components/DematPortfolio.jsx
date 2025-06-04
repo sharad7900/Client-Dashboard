@@ -11,7 +11,7 @@ function DematPortfolio(){
    const [val,setVal] = useState();
    useEffect(()=>{
     const data = async()=>{
-        const response = await fetch(`https://client-dashboard-ruby.vercel.app/demat_portFolio`,{
+        const response = await fetch(`https://client-dashboard-six-rho.vercel.app/demat_portFolio`,{
             method:"GET",
             credentials: 'include',
             headers:{
