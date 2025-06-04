@@ -55,7 +55,7 @@ const ForgotPassword = () => {
 
 const PasswordReset = async (PAN) =>{
 
-  const response = await fetch(`https://client-dashboard-ruby.vercel.app/forgotpassword`,{
+  const response = await fetch(`https://client-dashboard-six-rho.vercel.app/forgotpassword`,{
         method:"POST",
         credentials: 'include',
         headers:{
