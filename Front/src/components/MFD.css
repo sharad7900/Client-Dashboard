@@ -32,3 +32,85 @@
 .cmtbtn{
     padding: 5%;
 }
+
+@media (max-width: 1110px) {
+  .header,
+  .rows {
+    font-size: 0.75rem;
+    padding: 10px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  }
+
+  .tableData {
+    padding: 0.25rem;
+   
+  }
+
+  .status,
+  .cmtbtn {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+
+  .tableData {
+    overflow-x: scroll;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header,
+  .rows {
+    font-size: 0.75rem;
+    padding: 10px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  }
+
+  .tableData {
+    padding: 0.25rem;
+   
+  }
+
+  .status,
+  .cmtbtn {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+
+  .tableData {
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .header,
+  .rows {
+    font-size: 0.75rem;
+    padding: 10px;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  }
+
+  .tableData {
+    padding: 0.25rem;
+   
+  }
+
+  .status,
+  .cmtbtn {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+  }
+
+  .tableData {
+    overflow-x: scroll;
+  }
+}

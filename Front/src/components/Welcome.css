@@ -7,9 +7,24 @@
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .menubtn > button{
     background-color: rgb(17,17,17);
+}
+
+@media (max-width: 768px) {
+    .welcmoutr{
+    background-image: url("../unnamed2.png");
+    }
+}
+
+@media (max-width: 450px) {
+    .welcmoutr{
+    background-image: url("../unnamed3.jpg");
+    width: 100%;
+   
+    }
 }
 

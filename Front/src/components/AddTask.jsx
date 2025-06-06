@@ -3,6 +3,7 @@ import { use, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from 'react-toastify';
+import './AddTask.css';
 
 
 const AddTask =(DB_ID)=>{
@@ -14,7 +15,7 @@ const AddTask =(DB_ID)=>{
         Frequency: "",
     
     })
-
+    
    const handleClick = async()=>{
     if(values.Task_Name.length===0){
       toast.error("Task Name Required");
@@ -51,7 +52,7 @@ const AddTask =(DB_ID)=>{
 
     return(<>
     
-    <div style={{display:"flex",justifyContent:"center", position:'sticky', bottom:"10px"}}>
+    <div className="plate">
     <Drawer.Root placement={"bottom"} >
       <Drawer.Trigger asChild>
         <Button variant="outline" size="xl" padding={'3'} background={"green"} style={{border:"2px solid white", fontSize:"larger"}}>
@@ -63,9 +64,9 @@ const AddTask =(DB_ID)=>{
         <Drawer.Positioner>
           <Drawer.Content style={{padding:"1%"}}>
             <Drawer.Body>
-            <div style={{display:"flex", justifyContent:"space-evenly", padding:"1% 1% 2% 1%"}}>
-            <Input placeholder="Task Name" style={{width:"15%"}} onChange={(e)=>setValue(prev => ({...prev,Task_Name: e.target.value}))}/>
-            <DatePicker placeholderText="Due Date" selected={values.Due_Date} onChange={(date)=>setValue(prev=>({...prev,Due_Date:date}))}/>
+            <div className="template">
+            <Input className="inputTask" placeholder="Task Name" onChange={(e)=>setValue(prev => ({...prev,Task_Name: e.target.value}))}/>
+            <DatePicker className="datePick" placeholderText="Due Date" selected={values.Due_Date} onChange={(date)=>setValue(prev=>({...prev,Due_Date:date}))}/>
              <NativeSelect.Root size="md" width="240px">
              <NativeSelect.Field placeholder="Select Priority" padding={'1.5'} onChange={(e)=>setValue(prev=>({...prev,Priority: e.target.value}))}>
              <option value="Low">Low</option>

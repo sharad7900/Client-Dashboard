@@ -46,7 +46,8 @@ function MFD(){
 {val ? <div className="tableData">
 
 <Table.Root size="sm">
-  <Table.Header>
+  {/* window.innerWidth<768 ? '10px': (window.innerWidth<480 ? '2px':"") */}
+  <Table.Header className="header">
     <Table.Row>
       <Table.ColumnHeader className="header">Name</Table.ColumnHeader>
       <Table.ColumnHeader className="header">Status</Table.ColumnHeader>

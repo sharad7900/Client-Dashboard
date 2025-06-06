@@ -1,0 +1,84 @@
+.plate{
+    display: flex;
+    justify-content: center;
+    position: sticky; 
+    bottom: 10px;
+}
+
+.template{
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 1% 2% 1%;
+    margin-right: 10%;
+}
+input{
+    width:15%;
+}
+.datePick{
+    width: 100%; 
+  min-width: 180px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+@media (max-width: 480px){
+
+    .template{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    input{
+        width: 70%;
+        margin: 2%;
+    }
+    button{
+        margin: 5% 0%;
+    }
+    select{
+        margin: 3%;
+
+    }
+    
+}
+
+@media (max-width: 768px){
+
+    .template{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    input{
+        width: 70%;
+        margin: 2%;
+    }
+    button{
+        margin: 5% 0%;
+    }
+    select{
+        margin: 2% 0% 5% 5%;
+    }
+    
+}
+
+@media (max-width: 1110px){
+
+    .template{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    input{
+        width: 70%;
+        margin: 2%;
+    }
+    button{
+        margin: 5% 0%;
+    }
+    select{
+        margin: 2% 0% 5% 5%;
+    }
+    
+}
