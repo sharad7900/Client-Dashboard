@@ -50,7 +50,7 @@ const Login = () => {
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>PAN:</label><br />
+            <label>PAN:</label>
             <Input value={PAN.trim().toUpperCase()}
               onChange={(e) => setPan(e.target.value)}/>
 
