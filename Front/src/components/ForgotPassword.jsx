@@ -64,11 +64,11 @@ const PasswordReset = async (PAN) =>{
         body: JSON.stringify({PAN})
     })
   const res = await response.json();
-  if(res.message==="Mail Sent"){
-    toast.success(res.message);
+  if(!response.ok){
+    toast.error(res.message);
   }
   else{
-    toast.error(res.message)
+    toast.success(res.message)
   }
 }
 
