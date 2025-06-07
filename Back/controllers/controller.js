@@ -240,8 +240,14 @@ const forgotpassword = async (req, res) => {
         res.status(400).json({message: "Not Sent!"});
       } else {
 
-        const atIndex = email.indexOf("@");
+        try{
+          const atIndex = email.indexOf("@");
         res.status(200).json({message: `Mail sent to your mail ID: ${email.slice(0,2)}********${email.slice(atIndex-2,atIndex)}${email.slice(atIndex,email.length)}`});
+        }
+        catch(error){
+        res.status(400).json({message: error});
+
+        }
       }
     });
 }
