@@ -64,7 +64,6 @@ const PasswordReset = async (PAN) =>{
         body: JSON.stringify({PAN})
     })
   const res = await response.json();
-  console.log(response);
   if(!response.ok){
     toast.error(res.message);
   }
