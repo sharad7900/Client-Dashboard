@@ -51,13 +51,13 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>PAN:</label>
-            <Input value={PAN.trim().toUpperCase()}
+            <Input className="paninput" value={PAN.trim().toUpperCase()}
               onChange={(e) => setPan(e.target.value)}/>
 
           </div>
           <div className="form-group">
             <label>Password:</label>
-            <PasswordInput value={pass.trim()} onChange={(e) => setPassword(e.target.value)}/>
+            <PasswordInput className="paninput" value={pass.trim()} onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <Button loading={loading} type="submit" className="loginbtn">Login</Button>
           <br />
