@@ -10,7 +10,7 @@
     justify-content: space-between;
     padding: 1% 1% 2% 1%;
     margin-right: 10%;
-    margin-bottom: 100%;
+    
 }
 input{
     width:15%;
@@ -28,6 +28,7 @@ input{
     .template{
         display: flex;
         flex-direction: column;
+        margin-bottom: 100%;
         
     }
     input{

@@ -9,7 +9,6 @@ app.use(express.json());
 
 const corsOption ={
     origin:"https://client-dashboard-suigenerisconsulting.netlify.app",
-    //https://client-dashboard-suigenerisconsulting.netlify.app
     methods: "GET, PUT, PATCH, DELETE, POST, HEAD",
     credentials:true,
     allowedHeaders: ["Content-Type", "Authorization"]
@@ -21,6 +20,4 @@ app.use("/",router);
 
 
 
-app.listen(5000,()=>{
-    console.log("Runnig");
-})
+module.exports = app;
