@@ -236,7 +236,7 @@ const forgotpassword = async (req, res) => {
       text: `Link is valid for 15 minutes\n\nhttps://client-dashboard-suigenerisconsulting.netlify.app/createpassword?token=` + token
     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
+     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         res.status(400).json({message: "Not Sent!"});
       } else {
@@ -246,6 +246,7 @@ const forgotpassword = async (req, res) => {
         res.status(200).json({message: `Mail sent to your mail ID: ${email.slice(0,2)}********${email.slice(atIndex-2,atIndex)}${email.slice(atIndex,email.length)}`});
         }
         catch(error){
+          console.log(error);
         res.status(400).json({message: error});
 
         }
@@ -253,6 +254,7 @@ const forgotpassword = async (req, res) => {
     });
     
   } catch (error) {
+    console.log(error);
     res.status(400).json({message:error});
   }
 
