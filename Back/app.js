@@ -8,7 +8,8 @@ const app = express();
 app.use(express.json());
 
 const corsOption ={
-    origin:"https://client-dashboard-suigenerisconsulting.netlify.app",
+    origin:process.env.FRONTEND_URL || "http://localhost:5173",
+    //https://client-dashboard-suigenerisconsulting.netlify.app
     methods: "GET, PUT, PATCH, DELETE, POST, HEAD",
     credentials:true,
     allowedHeaders: ["Content-Type", "Authorization"]

@@ -232,14 +232,15 @@ const forgotpassword = async (req, res) => {
       from: process.env.EMAIL,
       to: email,
       subject: 'Reset Your Password',
-      text: 'Link is valid for 15 minutes\n\nhttps://client-dashboard-suigenerisconsulting.netlify.app/createpassword?token=' + token
+      text: `Link is valid for 15 minutes\n\n${process.env.FRONTEND_URL || "http://localhost:5173"}/createpassword?token=` + token
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         res.status(400).json({message: "Not Sent!"});
       } else {
-        res.status(200).json({message: "Mail Sent"});
+        const atIndex = email.indexOf("@");
+        res.status(200).json({message: `Mail sent to your mail ID: ${email.slice(0,2)}********${email.slice(indexOf-2,indexOf)}${email.slice(indexOf,email.length)}`});
       }
     });
 }
