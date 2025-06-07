@@ -198,7 +198,8 @@ const create_cmt = async (req, res) => {
 
 const forgotpassword = async (req, res) => {
 
-  const { PAN } = req.body;
+  try {
+    const { PAN } = req.body;
   if(!PAN){
     return res.status(400).json({message: "PAN Required"});
   }
@@ -241,7 +242,7 @@ const forgotpassword = async (req, res) => {
       } else {
 
         try{
-          const atIndex = email.indexOf("@");
+        const atIndex = email.indexOf("@");
         res.status(200).json({message: `Mail sent to your mail ID: ${email.slice(0,2)}********${email.slice(atIndex-2,atIndex)}${email.slice(atIndex,email.length)}`});
         }
         catch(error){
@@ -250,6 +251,12 @@ const forgotpassword = async (req, res) => {
         }
       }
     });
+    
+  } catch (error) {
+    res.status(400).json({message:error});
+  }
+
+  
 }
 
 const reset_password = async (req,res)=>{
