@@ -232,7 +232,7 @@ const forgotpassword = async (req, res) => {
       from: process.env.EMAIL,
       to: email,
       subject: 'Reset Your Password',
-      text: `Link is valid for 15 minutes\n\nhttps://client-dashboard-suigenerisconsulting.netlify.app//createpassword?token=` + token
+      text: `Link is valid for 15 minutes\n\nhttps://client-dashboard-suigenerisconsulting.netlify.app/createpassword?token=` + token
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
