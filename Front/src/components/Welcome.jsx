@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Demo from "./Sider";
 import "./Welcome.css"
+import { AssigneeContext } from "../AssigneesContext";
 
 const Welcome = ()=>{
+
+    const {setID} = useContext(AssigneeContext);
     useEffect(()=>{
         const data = async()=>{
         const response = await fetch(`https://client-dashboard-six-rho.vercel.app/`,{
@@ -16,6 +19,8 @@ const Welcome = ()=>{
               window.location.href = '/login'
               return;
             }
+        const Ids = await response.json();
+        setID(Ids);
     }
     data();   
     },[])

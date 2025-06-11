@@ -12,7 +12,16 @@ const home = async (req, res) => {
   }
   try{
     const data = jwt.verify(cookie, process.env.SECRET);
-    res.status(200).send("Hello");
+    const response = await notion.databases.query({
+      database_id: '20a494c84bb680e4ba18d2fff5265f53',
+    });
+   
+   var t = [];
+   for(var i=0;i<response.results.length;i++){
+    t.push({Name:response.results[i]?.properties?.ID?.people[0]?.name,ID:response.results[i]?.properties?.ID?.people[0]?.id});
+   }
+
+    res.status(200).json(t);
   }
   catch(error){
     res.status(400).send("Session Expired");

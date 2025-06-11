@@ -1,18 +1,21 @@
 import { Button, CloseButton, Drawer, Field, Input, NativeSelect, NumberInput, Portal } from "@chakra-ui/react"
-import { use, useState } from "react";
+import { use, useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from 'react-toastify';
 import './AddTask.css';
+import { AssigneeContext } from "../AssigneesContext";
 
 
 const AddTask =(DB_ID)=>{
+  const {ID} = useContext(AssigneeContext);
     const [load,setLoad] = useState(false);
     const [values,setValue] = useState({
         Task_Name: "",
         Due_Date: new Date(),
         Priority: "",
         Frequency: "",
+        AssigneeID: ""
     
     })
     
@@ -32,7 +35,8 @@ const AddTask =(DB_ID)=>{
   Due_Date: values.Due_Date,
   Frequency: values.Frequency,
   Priority: values.Priority,
-  db_id: DB_ID.DB_ID
+  db_id: DB_ID.DB_ID,
+  AssigneeID: values.AssigneeID
 })
             
         })
@@ -92,7 +96,15 @@ const AddTask =(DB_ID)=>{
            </NativeSelect.Field>
            <NativeSelect.Indicator />
          </NativeSelect.Root>
-         
+         <NativeSelect.Root size="md" width="200px">
+             <NativeSelect.Field placeholder="Assigned To" padding={'1.5'} onChange={(e)=>setValue(prev=>({...prev,AssigneeID: e.target.value}))}>
+              {Array.isArray(ID) && ID.map((id)=>(
+                <option key={id.ID} value={id.ID}>{id.Name}</option>
+              ))}
+            
+           </NativeSelect.Field>
+           <NativeSelect.Indicator />
+         </NativeSelect.Root>
    
             </div>
             </Drawer.Body>

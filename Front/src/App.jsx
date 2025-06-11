@@ -8,12 +8,14 @@ import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import CorporatePortFolio from './components/CorporatePortfolio';
 import DematPortfolio from './components/DematPortfolio';
+import { AssigneeIDs } from './AssigneesContext';
 
 
 
 
 function App(){
   return(<>
+  <AssigneeIDs>
   <BrowserRouter>
     <Routes>
        <Route path='*' element={<Login/>}/>
@@ -28,7 +30,7 @@ function App(){
     </Routes>
     
     </BrowserRouter>
-  
+  </AssigneeIDs>
  
   </>)
 }
