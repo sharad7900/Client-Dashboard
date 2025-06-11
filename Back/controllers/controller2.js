@@ -34,6 +34,7 @@ const Corporate_PortFolio = async (req, res) => {
       items[i]["Due"] = response2.results[i].properties['Due Date'].date ? response2.results[i].properties['Due Date'].date.start : " ";
       items[i]["Frequency"] = response2.results[i].properties.Frequency.number || " ";
       items[i]["Days_Left"] = response2.results[i].properties['Remaining Days'].formula.string || " ";
+      items[i]["Assignee"] = response2.results[i].properties.Assignee?.people[0]?.name || " ";
     }
     res.status(200).json(items);
 
@@ -79,6 +80,8 @@ const Demat_PortFolio = async (req, res) => {
       items[i]["Due"] = response2.results[i].properties['Due Date'].date ? response2.results[i].properties['Due Date'].date.start : " ";
       items[i]["Frequency"] = response2.results[i].properties['Frequency (Months)'].number || " ";
       items[i]["Days_Left"] = response2.results[i].properties['Remaining Days'].formula.string || " ";
+      items[i]["Assignee"] = response2.results[i].properties.Assignee?.people[0]?.name || " ";
+
     }
     res.status(200).json(items);
 
@@ -98,7 +101,7 @@ const Create_Task = async (req, res) => {
   try {
     const data = jwt.verify(cookie, process.env.SECRET);
     const page_id = data.Page_ID;
-    const { Task_Name, Due_Date, Priority, Frequency, db_id } = req.body;
+    const { Task_Name, Due_Date, Priority, Frequency, db_id, AssigneeID } = req.body;
     const configMap = {
       MFD: {
         task_name: "Task_name",
@@ -153,6 +156,14 @@ const Create_Task = async (req, res) => {
             },
           ],
         },
+        Assignee:{
+          people:[
+            {
+              object:"user",
+              id:AssigneeID
+            }
+          ]
+        }
       }
     });
 

@@ -46,11 +46,12 @@ function MFD(){
 {val ? <div className="tableData">
 
 <Table.Root size="sm">
-  {/* window.innerWidth<768 ? '10px': (window.innerWidth<480 ? '2px':"") */}
+
   <Table.Header className="header">
     <Table.Row>
       <Table.ColumnHeader className="header">Name</Table.ColumnHeader>
       <Table.ColumnHeader className="header">Status</Table.ColumnHeader>
+      <Table.ColumnHeader className="header">Assignee</Table.ColumnHeader>
       <Table.ColumnHeader className="header">Due</Table.ColumnHeader>
       <Table.ColumnHeader className="header">Frequency</Table.ColumnHeader>
       <Table.ColumnHeader className="header">Days Left</Table.ColumnHeader>
@@ -62,6 +63,7 @@ function MFD(){
       <Table.Row key={index}>
         <Table.Cell className="rows">{item.Name}</Table.Cell>
         <Table.Cell className="rows">{item.Status==="Done" ? <Badge colorPalette="green" className="status">Done</Badge> : item.Status==="In progress" ? <Badge colorPalette="blue" className="status">In progress</Badge> : <Badge colorPalette="gray" className="status">Not Started</Badge>}</Table.Cell>
+        <Table.Cell className="rows">{item.Assignee}</Table.Cell>
         <Table.Cell className="rows">{item.Due.slice(0,10)}</Table.Cell>
         <Table.Cell className="rows">{item.Frequency}</Table.Cell>
         <Table.Cell className="rows">{item.Days_Left}</Table.Cell>

@@ -115,39 +115,9 @@ const mfd = async (req, res) => {
     items[i]["Due"] = response2.results[i].properties.Due.date ? response2.results[i].properties.Due.date.start : " ";
     items[i]["Frequency"] = response2.results[i].properties['Frequency (Months)'].number || " ";
     items[i]["Days_Left"] = response2.results[i].properties['Days Left'].formula.string || " ";
+    items[i]["Assignee"] = response2.results[i].properties.Assignee?.people[0]?.name || " ";
  }
-  // for (var i = 0; i < ln; i++) {
-  //   const temp = await notion.pages.retrieve({
-  //     page_id: response.properties.MF.relation[i].id
-  //   });
-  //   items.push({ "id": response.properties.MF.relation[i].id });
-  //   if (temp.properties.Name.title.length === 0) {
-  //     items[i]["Name"] = "";
-  //   }
-  //   else {
-  //     items[i]["Name"] = temp.properties.Name.title[0].text.content
-  //   }
-  //   items[i]["Status"] = temp.properties.Status.status.name;
-  //   if (temp.properties.Due.date === null) {
-  //     items[i]["Due"] = " "
-  //   }
-  //   else {
-  //     items[i]["Due"] = temp.properties.Due.date.start
-  //   }
-  //   if (temp.properties.Frequency.number === null) {
-  //     items[i]["Frequency"] = " "
-  //   }
-  //   else {
-  //     items[i]["Frequency"] = temp.properties.Frequency.number
-  //   }
-  //   if (temp.properties.Days_Left.formula.number === null && temp.properties.Days_Left.formula.string === null) {
-  //     items[i]["Days_Left"] = " "
-  //   }
-  //   else {
-  //     items[i]["Days_Left"] = temp.properties.Days_Left.formula.number || temp.properties.Days_Left.formula.string
-  //   }
-
-  // }
+  
   res.status(200).json(items);
 
   }
