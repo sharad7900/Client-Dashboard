@@ -45,7 +45,7 @@ function CorporatePortFolio(){
     <div className="menu"><Demo/></div>
 {val ? <div className="tableData">
 
-<Table.Root size="sm">
+<Table.Root size="sm" className="task-table">
   <Table.Header>
     <Table.Row>
       <Table.ColumnHeader className="header">Name</Table.ColumnHeader>

@@ -45,7 +45,7 @@ function MFD(){
     <div className="menu"><Demo/></div>
 {val ? <div className="tableData">
 
-<Table.Root size="sm">
+<Table.Root size="sm" className="task-table">
 
   <Table.Header className="header">
     <Table.Row>

@@ -1,9 +1,14 @@
 .menu{
     width: 10px;
 }
-
+.task-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
 .tableData{
     margin: 5% 15% 5% 15%;
+    overflow-x: auto;
     
 }
 .header{
@@ -44,6 +49,11 @@
   
   }
 
+  .task-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
   .tableData {
     padding: 0.25rem;
    
@@ -72,6 +82,12 @@
   
   }
 
+  .task-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
   .tableData {
     padding: 0.25rem;
    
@@ -98,7 +114,11 @@
   text-overflow: ellipsis;
   
   }
-
+.task-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
   .tableData {
     padding: 0.25rem;
    
