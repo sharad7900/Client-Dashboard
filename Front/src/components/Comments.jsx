@@ -64,6 +64,7 @@ const ChatPage =  () => {
               alignSelf={msg.prsn === 'user' ? 'flex-end' : 'flex-start'}
               bg={msg.prsn === 'user' ? 'blue.500' : 'gray.500'}
               p={2}
+              style={{color:"white"}}
               borderRadius="lg"
               maxW="70%"
             >
@@ -74,7 +75,7 @@ const ChatPage =  () => {
       </Box>
       <HStack>
         <Input
-          style={{width:"100%"}}
+          style={{width:"100%", color:"white"}}
           placeholder="Type a message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}

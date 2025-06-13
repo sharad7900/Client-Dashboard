@@ -134,3 +134,7 @@
     overflow-x: scroll;
   }
 }
+
+.cmtbtn:hover{
+  color: white;
+}
