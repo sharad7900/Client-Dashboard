@@ -23,19 +23,27 @@
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    color: white;
   }
   
   .loginbtn {
     width: 40%;
-    background-color: white;
+    background-color: gray;
   }
   
+  .loginbtn:hover {
+    width: 40%;
+    background-color: rgb(32, 32, 32);
+    color: black;
+    cursor: pointer;
+  }
   button:hover {
     background-color: #0056b3;
   }
   
   label{
     text-align: left;
+    color: white;
   }
 
   .outer{
@@ -53,6 +61,8 @@
 
   .fplnk{
     margin-top: 5%;
+    color: white;
+    text-decoration: none;
   }
   
   .paninput {

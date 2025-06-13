@@ -47,7 +47,8 @@ const Login = () => {
     return (
     <div className="outer">
       <div className="login-container">
-        <h2>Login</h2>
+       
+        <h2 style={{color:"white",fontWeight:"bold",fontSize:"xx-larger"}}>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>PAN:</label>
