@@ -23,7 +23,7 @@ const Demo = () => {
   return (
     <Drawer.Root placement={"start"}>
       <Drawer.Trigger asChild>
-        <Button variant="outline" size="md" style={{color:"white"}}>
+        <Button variant="outline" size="md" style={{color:"white", backgroundColor:"black"}}>
         <AiOutlineMenu/>
         </Button>
       </Drawer.Trigger>
