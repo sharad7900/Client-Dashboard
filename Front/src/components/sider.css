@@ -22,11 +22,11 @@
     
 }
 .chakra-button:hover{
-    background-color: rgb(41, 41, 41);
+    background-color: black;
 }
 
 .r1:hover{
-    background-color: rgb(41, 41, 41);
+    background-color: black;
     font-weight: bold;
 }
 .logout:hover{

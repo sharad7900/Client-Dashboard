@@ -62,7 +62,7 @@ const Demo = () => {
 
               </div>
             </Drawer.Body>
-            <Drawer.Footer style={{backgroundColor:"rgb(41, 41, 41);"}}>
+            <Drawer.Footer style={{backgroundColor:"rgb(41, 41, 41)"}}>
               <Button variant="ghost" className="logout" onClick={logout}>Logout</Button>
             </Drawer.Footer>
             <Drawer.CloseTrigger asChild>
