@@ -23,7 +23,7 @@ const Demo = () => {
   return (
     <Drawer.Root placement={"start"}>
       <Drawer.Trigger asChild>
-        <Button variant="outline" size="sm">
+        <Button variant="outline" size="md" style={{color:"white"}}>
         <AiOutlineMenu/>
         </Button>
       </Drawer.Trigger>
@@ -34,7 +34,7 @@ const Demo = () => {
             <Drawer.Header>
               {/* <Drawer.Title>Menu</Drawer.Title> */}
             </Drawer.Header>
-            <Drawer.Body>
+            <Drawer.Body style={{backgroundColor:"rgb(41, 41, 41)"}}>
               <div className="menuitems">
               <Table.Root size="sm">
             <Table.Header>
@@ -62,11 +62,11 @@ const Demo = () => {
 
               </div>
             </Drawer.Body>
-            <Drawer.Footer>
+            <Drawer.Footer style={{backgroundColor:"rgb(41, 41, 41);"}}>
               <Button variant="ghost" className="logout" onClick={logout}>Logout</Button>
             </Drawer.Footer>
             <Drawer.CloseTrigger asChild>
-              <CloseButton size="sm" />
+              <CloseButton size="sm" style={{color:"white"}}/>
             </Drawer.CloseTrigger>
           </Drawer.Content>
         </Drawer.Positioner>

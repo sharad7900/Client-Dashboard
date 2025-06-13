@@ -1,13 +1,15 @@
 .menuitems{
     padding-top:20%;
     font-size: larger;
+    color:white;
 }
 
 .r1{
     font-size: x-large;
-    background-color: rgb(17,17,17);
+    background-color: rgb(41, 41, 41);
     text-align: center;
     padding: 5%;
+    color:white;
 }
 
 .tb{
@@ -16,6 +18,8 @@
 
 .logout{
     width: 25%;
+    color: white;
+    
 }
 .chakra-button:hover{
     background-color: rgb(41, 41, 41);
@@ -24,4 +28,7 @@
 .r1:hover{
     background-color: rgb(41, 41, 41);
     font-weight: bold;
+}
+.logout:hover{
+    font-weight: bolder;
 }
