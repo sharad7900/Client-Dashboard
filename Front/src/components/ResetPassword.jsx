@@ -49,21 +49,21 @@ const ResetPassword = () => {
   return (
     <Box maxW="lg" mx="auto" mt="12" p="6" borderWidth="1px" borderRadius="lg" boxShadow="md">
       <Heading size="lg" mb="4">Reset Password</Heading>
-      <Text mb="6">Create your new password.</Text>
+      <Text mb="6" >Create your new password.</Text>
 
       <form onSubmit={handleSubmit}>
         <FormControl>
-          <FormLabel>pass address</FormLabel>
+          <FormLabel>New Password</FormLabel>
           <Input
-            style={{width:"100%"}}
+            style={{width:"100%", color:"black"}}
             type="pass"
             placeholder="New Password"
             value={pass.trim()}
             onChange={(e) => setpass(e.target.value)}
           />
-          <FormLabel>pass address</FormLabel>
+          <FormLabel>Confirm Password</FormLabel>
           <Input
-          style={{width:"100%"}}
+          style={{width:"100%", color:"black"}}
             type="pass"
             placeholder="Confirm Password"
             value={confpass.trim()}
