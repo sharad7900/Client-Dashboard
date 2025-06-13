@@ -59,7 +59,7 @@ const AddTask =(DB_ID)=>{
     <div className="plate">
     <Drawer.Root placement={"bottom"} >
       <Drawer.Trigger asChild>
-        <Button variant="outline" size="xl" padding={'3'} background={"green"} style={{border:"2px solid white", fontSize:"larger"}}>
+        <Button variant="outline" size="xl" padding={'3'} background={"green"} style={{border:"2px solid white", fontSize:"larger",color:"white"}}>
           Add Task
         </Button>
       </Drawer.Trigger>
