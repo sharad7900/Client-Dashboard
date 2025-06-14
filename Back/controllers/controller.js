@@ -18,6 +18,9 @@ const home = async (req, res) => {
    
    var t = [];
    for(var i=0;i<response.results.length;i++){
+
+    if(response.results[i]?.properties?.ID?.people[0]?.id===null){continue;}
+    
     t.push({Name:response.results[i]?.properties?.ID?.people[0]?.name,ID:response.results[i]?.properties?.ID?.people[0]?.id});
    }
 
