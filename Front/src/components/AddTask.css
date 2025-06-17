@@ -4,10 +4,7 @@
     position: sticky; 
     bottom: 10px;
 }
-.inputTask{
-    color: black;
 
-}
 .template{
     display: flex;
     justify-content: space-between;
@@ -24,7 +21,6 @@ input{
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  color: black;
 }
 
 @media (max-width: 480px){
