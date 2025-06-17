@@ -75,7 +75,7 @@ const ChatPage =  () => {
       </Box>
       <HStack>
         <Input
-          style={{width:"100%", color:"black"}}
+          style={{width:"100%"}}
           placeholder="Type a message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
