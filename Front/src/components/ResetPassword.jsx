@@ -55,7 +55,7 @@ const ResetPassword = () => {
         <FormControl>
           <FormLabel>New Password</FormLabel>
           <Input
-            style={{width:"100%", color:"black"}}
+            style={{width:"100%"}}
             type="pass"
             placeholder="New Password"
             value={pass.trim()}
@@ -63,7 +63,7 @@ const ResetPassword = () => {
           />
           <FormLabel>Confirm Password</FormLabel>
           <Input
-          style={{width:"100%", color:"black"}}
+          style={{width:"100%"}}
             type="pass"
             placeholder="Confirm Password"
             value={confpass.trim()}

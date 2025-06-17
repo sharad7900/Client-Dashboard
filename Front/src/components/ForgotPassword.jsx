@@ -32,7 +32,7 @@ const ForgotPassword = () => {
         <FormControl>
           <FormLabel>PAN Number</FormLabel>
           <Input
-            style={{width:"100%", color:"black"}}
+            style={{width:"100%"}}
             type='text'
             placeholder="ABCDE0123F"
             value={PAN.trim().toUpperCase()}
