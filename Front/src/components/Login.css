@@ -34,7 +34,6 @@
   .loginbtn:hover {
     width: 40%;
     background-color: rgb(32, 32, 32);
-    color: black;
     cursor: pointer;
   }
   button:hover {
