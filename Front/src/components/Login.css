@@ -28,6 +28,7 @@
   .loginbtn {
     width: 40%;
     background-color: gray;
+    color: white;
   }
   
   .loginbtn:hover {
