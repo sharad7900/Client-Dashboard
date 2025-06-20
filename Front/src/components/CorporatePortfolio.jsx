@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Demo from "./Sider";
 import "./MFD.css" 
-import { Badge, Button, Spinner, Table } from "@chakra-ui/react";
+import { Badge, Button, NativeSelect, Spinner, Table } from "@chakra-ui/react";
 import { RiArrowRightLine} from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import AddTask from "./AddTask";
@@ -9,6 +9,7 @@ import AddTask from "./AddTask";
 
 function CorporatePortFolio(){
    const [val,setVal] = useState();
+   const [filterval,setFilterval] = useState([]);
    useEffect(()=>{
     const data = async()=>{
         const response = await fetch(`https://client-dashboard-six-rho.vercel.app/corporate_portFolio`,{
@@ -26,6 +27,7 @@ function CorporatePortFolio(){
             }
         const res = await response.json();
         setVal(res);
+        setFilterval(res);
            
        }
       data();
@@ -45,6 +47,25 @@ function CorporatePortFolio(){
     <div className="menu"><Demo/></div>
 {val ? <div className="tableData">
 
+  <div className="filter-btn"><NativeSelect.Root size="sm" width="140px">
+        <NativeSelect.Field placeholder="Select Status" padding={"1"} onChange={(e) => {
+    const selected = e.target.value;
+    if (!selected || selected === null) {
+      setFilterval(val); 
+    } else {
+      const filtered = val.filter(item => item.Status === selected);
+      setFilterval(filtered);
+    }
+  }}>
+          <option value="Not started">Not started</option>
+          <option value="In progress">In progress</option>
+          <option value="Done">Done</option>
+        </NativeSelect.Field>
+        <NativeSelect.Indicator />
+      </NativeSelect.Root>
+      </div>
+  
+
 <Table.Root size="sm" className="task-table">
   <Table.Header>
     <Table.Row>
@@ -58,7 +79,7 @@ function CorporatePortFolio(){
     </Table.Row>
   </Table.Header>
   <Table.Body>
-    {val.map((item,index) => (
+    {filterval.map((item,index) => (
       <Table.Row key={index}>
         <Table.Cell className="rows">{item["Task Name"]}</Table.Cell>
         <Table.Cell className="rows">{item.Status==="Done" ? <Badge colorPalette="green" className="status">Done</Badge> : item.Status==="In progress" ? <Badge colorPalette="blue" className="status">In progress</Badge> : <Badge colorPalette="gray" className="status">Not Started</Badge>}</Table.Cell>
