@@ -52,7 +52,7 @@ const Welcome = ()=>{
  <div className="sider">
 <div className="navbar-wlc">
    <ul>
-    <li> <Image rounded="md" src="https://www.suigenerisconsulting.com/img/sgc.png" alt="SGC" style={{height:"50px"}}/></li>
+    <li> <Image rounded="md" src="sgc.png" alt="SGC" style={{height:"50px"}}/></li>
     <li> <ColorModeButton/></li>
     <li><Button variant="plain" onClick={logout}>Logout <RiArrowRightLine /></Button></li>
    </ul>
