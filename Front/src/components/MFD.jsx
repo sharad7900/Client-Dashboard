@@ -41,7 +41,8 @@ function MFD(){
       state: { id: ids }
     });
    }
-   const handleDiscription = (ids)=>{
+   const handleDescription = (ids)=>{
+
      navigate('/descriptions', {
       state: { id: ids }
     });
@@ -85,7 +86,7 @@ function MFD(){
   </Table.Header>
   <Table.Body>
     {filterval.map((item,index) => (
-      <Table.Row key={index} onClick={()=>handleDiscription(item.id)} style={{cursor:"pointer"}}>
+      <Table.Row key={index} onClick={()=>handleDescription(item.id)} style={{cursor:"pointer"}}>
         <Table.Cell className="rows">{item.Name}</Table.Cell>
         <Table.Cell className="rows">{item.Status==="Done" ? <Badge colorPalette="green" className="status">Done</Badge> : item.Status==="In progress" ? <Badge colorPalette="blue" className="status">In progress</Badge> : <Badge colorPalette="gray" className="status">Not Started</Badge>}</Table.Cell>
         <Table.Cell className="rows">{item.Assignee}</Table.Cell>
