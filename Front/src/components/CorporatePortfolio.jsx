@@ -40,13 +40,13 @@ function CorporatePortFolio() {
     navigate('/chatpage', {
       state: { id: ids }
     });
+  }
     const handleDiscription = (ids) => {
       console.log(ids);
       navigate('/descriptions', {
         state: { id: ids }
       });
 
-    }
 
   }
 

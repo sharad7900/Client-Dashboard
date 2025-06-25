@@ -42,7 +42,7 @@ function MFD(){
     });
     const handleDiscription = (ids)=>{
      console.log(ids);
-     navigate('/description', {
+     navigate('/descriptions', {
       state: { id: ids }
     });
 

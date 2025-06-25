@@ -41,6 +41,7 @@ function DematPortfolio() {
       state: { id: ids }
     });
 
+  }
     const handleDiscription = (ids) => {
       console.log(ids);
       navigate('/descriptions', {
@@ -48,7 +49,6 @@ function DematPortfolio() {
       });
     }
 
-  }
 
   return (<>
     <div className="menu"><Demo /></div>
