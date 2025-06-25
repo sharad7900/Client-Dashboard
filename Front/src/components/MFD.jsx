@@ -86,13 +86,13 @@ function MFD(){
   </Table.Header>
   <Table.Body>
     {filterval.map((item,index) => (
-      <Table.Row key={index} onClick={()=>handleDescription(item.id)} style={{cursor:"pointer"}}>
-        <Table.Cell className="rows">{item.Name}</Table.Cell>
-        <Table.Cell className="rows">{item.Status==="Done" ? <Badge colorPalette="green" className="status">Done</Badge> : item.Status==="In progress" ? <Badge colorPalette="blue" className="status">In progress</Badge> : <Badge colorPalette="gray" className="status">Not Started</Badge>}</Table.Cell>
-        <Table.Cell className="rows">{item.Assignee}</Table.Cell>
-        <Table.Cell className="rows">{item.Due.slice(0,10)}</Table.Cell>
-        <Table.Cell className="rows" style={{textAlign:"center"}}>{item.Frequency}</Table.Cell>
-        <Table.Cell className="rows">{item.Days_Left}</Table.Cell>
+      <Table.Row key={index} style={{cursor:"pointer"}}>
+        <Table.Cell className="rows" onClick={()=>handleDescription(item.id)}>{item.Name}</Table.Cell>
+        <Table.Cell className="rows" onClick={()=>handleDescription(item.id)}>{item.Status==="Done" ? <Badge colorPalette="green" className="status">Done</Badge> : item.Status==="In progress" ? <Badge colorPalette="blue" className="status">In progress</Badge> : <Badge colorPalette="gray" className="status">Not Started</Badge>}</Table.Cell>
+        <Table.Cell className="rows" onClick={()=>handleDescription(item.id)}>{item.Assignee}</Table.Cell>
+        <Table.Cell className="rows" onClick={()=>handleDescription(item.id)}>{item.Due.slice(0,10)}</Table.Cell>
+        <Table.Cell className="rows" style={{textAlign:"center"}} onClick={()=>handleDescription(item.id)}>{item.Frequency}</Table.Cell>
+        <Table.Cell className="rows" onClick={()=>handleDescription(item.id)}>{item.Days_Left}</Table.Cell>
         <Table.Cell className="rows"><Button colorPalette="teal" variant="outline" className="cmtbtn" onClick={()=>handleClick(item.id)}>
         Comments <RiArrowRightLine />
       </Button></Table.Cell>
