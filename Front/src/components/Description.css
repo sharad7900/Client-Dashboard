@@ -1,0 +1,30 @@
+.description-list{
+    
+    margin: 5%;
+}
+.description-item{
+    padding-bottom: 1%;
+    font-size: x-large;
+
+}
+
+@media (max-width: 1370px){
+    .description-item{
+        font-size: medium;
+    }
+    .description-list{
+        padding: 0%;
+    }
+    
+}
+
+
+@media (max-width: 700px){
+    .description-item{
+        font-size: medium;
+    }
+    .description-list{
+        padding: 5%;
+    }
+    
+}

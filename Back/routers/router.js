@@ -14,6 +14,7 @@ router.route("/corporate_portFolio").get(control2.Corporate_PortFolio);
 router.route("/demat_portFolio").get(control2.Demat_PortFolio);
 router.route("/createTask").post(control2.Create_Task);
 router.route("/logout").post(control.logout);
+router.route("/descriptions").post(control2.description);
 
 
 module.exports = router;

@@ -177,5 +177,44 @@ const Create_Task = async (req, res) => {
 
 }
 
+const description = async (req,res)=>{
 
-module.exports = { Corporate_PortFolio, Demat_PortFolio, Create_Task };
+  const cookie = req.cookies.token;
+  if(!cookie){
+    return res.status(401).json({message:"Session Expired"});
+  }
+  try{
+    const data = jwt.verify(cookie,process.env.SECRET);
+    const page_id = req.body;
+    const blocks = [];
+  let cursor;
+  do {
+    const response = await notion.blocks.children.list({
+      block_id: page_id.page_id,
+      start_cursor: cursor,
+    });
+    blocks.push(...response.results);
+    cursor = response.has_more ? response.next_cursor : null;
+  } while (cursor);
+
+  const writtenLines = blocks
+    .filter(block =>
+      block.type === "paragraph" || block.type === "heading_1" || block.type === "heading_2" || block.type === "heading_3"
+    )
+    .flatMap(block =>
+      block[block.type].rich_text
+        .map(text => text.plain_text)
+        .join("")
+        .split(/\n+/)
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+    );
+  return res.status(200).json({writtenLines});
+  }
+  catch(error){
+    return res.status(400).json({message:"Session Expired"});
+  }
+}
+
+
+module.exports = { Corporate_PortFolio, Demat_PortFolio, Create_Task,description };

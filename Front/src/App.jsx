@@ -9,6 +9,7 @@ import ResetPassword from './components/ResetPassword';
 import CorporatePortFolio from './components/CorporatePortfolio';
 import DematPortfolio from './components/DematPortfolio';
 import { AssigneeIDs } from './AssigneesContext';
+import Description from './components/Description';
 
 
 
@@ -27,6 +28,7 @@ function App(){
        <Route path='/dematportfolio' element={<DematPortfolio/>}/>
        <Route path='/forgotpassword' element={<ForgotPassword/>}/>
        <Route path='/createpassword' element={<ResetPassword/>}/>
+       <Route path='/descriptions' element={<Description/>}/>
     </Routes>
     
     </BrowserRouter>
