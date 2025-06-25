@@ -40,13 +40,11 @@ function MFD(){
    navigate('/chatpage', {
       state: { id: ids }
     });
-    const handleDiscription = (ids)=>{
-     console.log(ids);
+   }
+   const handleDiscription = (ids)=>{
      navigate('/descriptions', {
       state: { id: ids }
     });
-
-   }
 
    }
 
